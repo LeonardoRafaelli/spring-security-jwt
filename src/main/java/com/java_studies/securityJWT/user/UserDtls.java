@@ -34,6 +34,11 @@ public class UserDtls implements UserDetails {
     }
 
     @Override
+    public String getPassword() {
+        return this.password;
+    }
+
+    @Override
     public String getUsername() {
         return this.email;
     }
