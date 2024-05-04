@@ -1,4 +1,4 @@
-package com.java_studies.securityJWT.config;
+package com.java_studies.securityJWT.config.jwt;
 
 import com.java_studies.securityJWT.user.UserDtls;
 import io.jsonwebtoken.Claims;

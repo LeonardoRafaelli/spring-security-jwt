@@ -1,7 +1,6 @@
 package com.java_studies.securityJWT.config;
 
-import io.jsonwebtoken.Jwt;
-import jakarta.servlet.Filter;
+import com.java_studies.securityJWT.config.jwt.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
