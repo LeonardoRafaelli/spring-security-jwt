@@ -34,13 +34,13 @@ public class JwtService {
         return claimsResolver.apply(claims);
     }
 
-    public String generateToken(UserDtls userDtls) {
+    public String generateToken(UserDetails userDtls) {
       return generateToken(new HashMap<>(), userDtls);
     };
 
     public String generateToken(
             Map<String, Object> extraClaims,
-            UserDtls userDtls
+            UserDetails userDtls
     ){
         return Jwts
                 .builder()
