@@ -17,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "_user")
 public class UserDtls implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

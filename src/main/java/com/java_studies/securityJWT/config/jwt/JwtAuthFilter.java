@@ -37,15 +37,22 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         final String authHeader = request.getHeader("Authorization");
         final String jwt;
         final String userEmail;
+        System.out.println("Chegou 1");
         if(authHeader == null || !authHeader.startsWith("Bearer ")) {
+
+            System.out.println("Chegou 2");
             filterChain.doFilter(request, response);
             return;
         }
 
         jwt = authHeader.substring(7);
         userEmail = jwtService.extractUsername(jwt);
+
+        System.out.println(STR."Chegou 3 ->\{userEmail}");
+
         if(userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
+            System.out.println("Chegou 4");
             if (jwtService.isTokenValid(jwt, userDetails)) {
                 UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
                         userDetails,
