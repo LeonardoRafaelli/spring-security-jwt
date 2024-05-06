@@ -18,9 +18,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @RequiredArgsConstructor // Necessary if u want to inject something
 public class ApplicationConfig {
-
+    @Autowired
     private final UserRepository userRepo;
-
 
     @Bean // Should always be public
     public UserDetailsService userDetailsService() {
